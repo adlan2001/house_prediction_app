@@ -6,7 +6,7 @@ import pandas as pd
 with open('scaler.pkl','rb') as file:
     scaler = pickle.load(file)
 
-with open('rf_model.pkl','rb') as file:
+with open('rf_house_price_model.pkl','rb') as file:
     model = pickle.load(file)
 
 st.title('Deployment of ML model..')
@@ -67,11 +67,15 @@ with tab3:
     select_model = st.selectbox('Choose model',['RF','DT','DNN'])
     
     if select_model == 'RF':
-        with open('rf_model.pkl','rb') as file:
+        with open('rf_house_price_model.pkl','rb') as file:
             model_1 = pickle.load(file)
         
         
     elif select_model == 'DT':
-        with open('dt_model.pkl','rb') as file:
+        with open('dt_house_price_model.pkl','rb') as file:
+            model = pickle.load(file)
+
+    elif select_model == 'DNN':
+        with open('svm_house_price_model.pkl','rb') as file:
             model = pickle.load(file)
 
